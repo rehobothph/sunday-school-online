@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sunday School Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-card">
+        <img src="logo.jpg" alt="Logo" class="auth-logo">
+        <h2>ಹೊಸ ಖಾತೆ ತೆರೆಯಿರಿ (Sign Up)</h2>
+        <p class="auth-subtitle">ಸಂಡೇ ಸ್ಕೂಲ್ ಕುಟುಂಬಕ್ಕೆ ಸುಸ್ವಾಗತ</p>
+
+        <form onsubmit="sendSignUpToWhatsApp(event)">
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="fullName" placeholder="ವಿದ್ಯಾರ್ಥಿಯ ಪೂರ್ಣ ಹೆಸರು" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="mobileNo" placeholder="WhatsApp ಮೊಬೈಲ್ ಸಂಖ್ಯೆ" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="signEmail" placeholder="ಇಮೇಲ್ (Email ID)" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="signPass" placeholder="ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಿ" required>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-full"><i class="fa-solid fa-user-plus"></i> Register Now</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯೇ? <a href="login.html">Login ಮಾಡಿ</a></p>
+            <p><a href="index.html">← Home Page</a></p>
+        </div>
+    </div>
+
+    <script>
+        function sendSignUpToWhatsApp(e) {
+            e.preventDefault();
+            var name = document.getElementById('fullName').value;
+            var phone = document.getElementById('mobileNo').value;
+            var email = document.getElementById('signEmail').value;
+            var pass = document.getElementById('signPass').value;
+            
+            var myNumber = "918073407706";
+            var pastorNumber = "917353609920";
+
+            var msg = "📝 *New Sunday School Registration*%0A%0A" +
+                      "👤 *Name:* " + name + "%0A" +
+                      "📱 *Phone:* " + phone + "%0A" +
+                      "📧 *Email:* " + email + "%0A" +
+                      "🔑 *Password:* " + pass;
+
+            // Opens WhatsApp to your number
+            window.open("https://wa.me/" + myNumber + "?text=" + msg, "_blank");
+            // Also option to send to Pastor
+            setTimeout(function() {
+                window.open("https://wa.me/" + pastorNumber + "?text=" + msg, "_blank");
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -17,7 +17,7 @@
         <form onsubmit="sendSignUpToWhatsApp(event)">
             <div class="input-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" id="fullName" placeholder="ವಿದ್ಯಾರ್ಥಿಯ ಪೂರ್ಣ ಹೆಸರು" required>
+                <input type="text" id="fullName" placeholder="ವಿದ್ಯಾರ್ಥಿಯ ಪೂರ್ಣ ಹೆಸರು (Full Name)" required>
             </div>
 
             <div class="input-group">
@@ -53,20 +53,14 @@
             var pass = document.getElementById('signPass').value;
             
             var myNumber = "918073407706";
-            var pastorNumber = "917353609920";
 
-            var msg = "📝 *New Sunday School Registration*%0A%0A" +
+            var msg = "📝 *New Sunday School Student Registration*%0A%0A" +
                       "👤 *Name:* " + name + "%0A" +
                       "📱 *Phone:* " + phone + "%0A" +
                       "📧 *Email:* " + email + "%0A" +
                       "🔑 *Password:* " + pass;
 
-            // Opens WhatsApp to your number
             window.open("https://wa.me/" + myNumber + "?text=" + msg, "_blank");
-            // Also option to send to Pastor
-            setTimeout(function() {
-                window.open("https://wa.me/" + pastorNumber + "?text=" + msg, "_blank");
-            }, 1000);
         }
     </script>
 </body>

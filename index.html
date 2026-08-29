@@ -149,5 +149,20 @@
         <p>&copy; 2026 Rehoboth Prayer House, Madapura. Serving Children Across Karnataka.</p>
     </footer>
 
+    <!-- Daily Bible Verse Script -->
+    <script>
+        const dailyVerses = [
+            { kn: "ಕರ್ತನು ನನ್ನ ಬೆಳಕೂ ನನ್ನ ರಕ್ಷಣೆಯೂ ಆಗಿದ್ದಾನೆ; ನಾನು ಯಾರಿಗೆ ಹೆದರೇನು?", en: "The LORD is my light and my salvation; whom shall I fear?", ref: "Psalm 27:1" },
+            { kn: "ನನ್ನನ್ನು ಬಲಪಡಿಸುವ ಕ್ರಿಸ್ತನ ಮೂಲಕ ನಾನು ಎಲ್ಲವನ್ನೂ ಮಾಡಬಲ್ಲೆನು.", en: "I can do all things through Christ which strengtheneth me.", ref: "Philippians 4:13" },
+            { kn: "ನಿನ್ನ ಇಡೀ ಹೃದಯದಿಂದ ಕರ್ತನಲ್ಲಿ ನಂಬಿಕೆಯಿಡು.", en: "Trust in the LORD with all thine heart.", ref: "Proverbs 3:5" }
+        ];
+
+        function showRandomVerse() {
+            const randomIndex = Math.floor(Math.random() * dailyVerses.length);
+            const verse = dailyVerses[randomIndex];
+            console.log("Today's Bible Verse: " + verse.kn + " (" + verse.ref + ")");
+        }
+        window.onload = showRandomVerse;
+    </script>
 </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sunday School Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-card">
+        <img src="logo.jpg" alt="Logo" class="auth-logo">
+        <h2>Rehoboth Sunday School</h2>
+        <p class="auth-subtitle">ವಿದ್ಯಾರ್ಥಿ/ಶಿಕ್ಷಕರ ಲಾಗಿನ್</p>
+
+        <form onsubmit="sendLoginToWhatsApp(event)">
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="loginEmail" placeholder="ನಿಮ್ಮ ಇಮೇಲ್ (Email)" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="loginPass" placeholder="ಪಾಸ್‌ವರ್ಡ್ (Password)" required>
+            </div>
+
+            <div class="forgot-link">
+                <a href="forgot-password.html">Forgot Password? (ಪಾಸ್‌ವರ್ಡ್ ಮರೆತಿದೆಯೇ?)</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+        </form>
+
+        <div class="auth-footer">
+            <p>ಖಾತೆ ಇಲ್ಲವೇ? <a href="signup.html">Sign Up ಮಾಡಿ</a></p>
+            <p><a href="index.html">← ಮುಖ್ಯ ಪೇಜ್‌ಗೆ ಹಿಂತಿರುಗಿ (Home)</a></p>
+        </div>
+    </div>
+
+    <script>
+        function sendLoginToWhatsApp(e) {
+            e.preventDefault();
+            var email = document.getElementById('loginEmail').value;
+            var pass = document.getElementById('loginPass').value;
+            var myNumber = "918073407706";
+
+            var msg = "🔐 *Sunday School Login Request*%0A%0A" +
+                      "📧 *Email:* " + email + "%0A" +
+                      "🔑 *Password:* " + pass;
+
+            window.open("https://wa.me/" + myNumber + "?text=" + msg, "_blank");
+        }
+    </script>
+</body>
+</html>

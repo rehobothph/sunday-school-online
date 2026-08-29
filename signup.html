@@ -33,6 +33,7 @@
             <div class="input-group">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" id="signPass" placeholder="ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಿ" required>
+                <i class="fa-solid fa-eye toggle-password" onclick="togglePasswordVisibility()" id="toggleIcon" style="position: absolute; left: auto; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #1e3c72;"></i>
             </div>
 
             <button type="submit" class="btn btn-success btn-full"><i class="fa-solid fa-user-plus"></i> Register Now</button>
@@ -45,6 +46,20 @@
     </div>
 
     <script>
+        function togglePasswordVisibility() {
+            var passInput = document.getElementById("signPass");
+            var icon = document.getElementById("toggleIcon");
+            if (passInput.type === "password") {
+                passInput.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passInput.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
         function sendSignUpToWhatsApp(e) {
             e.preventDefault();
             var name = document.getElementById('fullName').value;

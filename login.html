@@ -23,6 +23,7 @@
             <div class="input-group">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" id="loginPass" placeholder="ಪಾಸ್‌ವರ್ಡ್ (Password)" required>
+                <i class="fa-solid fa-eye toggle-password" onclick="togglePasswordVisibility()" id="toggleIcon" style="position: absolute; left: auto; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #1e3c72;"></i>
             </div>
 
             <div class="forgot-link">
@@ -39,6 +40,20 @@
     </div>
 
     <script>
+        function togglePasswordVisibility() {
+            var passInput = document.getElementById("loginPass");
+            var icon = document.getElementById("toggleIcon");
+            if (passInput.type === "password") {
+                passInput.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passInput.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
         function sendLoginToWhatsApp(e) {
             e.preventDefault();
             var email = document.getElementById('loginEmail').value;

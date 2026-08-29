@@ -305,3 +305,95 @@ footer {
     color: white;
     margin-top: 40px;
 }
+/* Auth & Separate Pages Styling */
+.auth-body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.auth-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #f39c12;
+    margin-bottom: 10px;
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1e3c72;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.forgot-link {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.forgot-link a {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.btn-full {
+    width: 100%;
+    padding: 12px;
+}
+
+.btn-primary { background-color: #1e3c72; color: white; }
+.btn-success { background-color: #27ae60; color: white; }
+.btn-warning { background-color: #f39c12; color: white; }
+
+.auth-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.auth-footer a {
+    color: #1e3c72;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-icon-large {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+}

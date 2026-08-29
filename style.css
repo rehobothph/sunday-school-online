@@ -24,22 +24,20 @@ header {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
     text-align: center;
 }
 
 .church-logo {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 4px solid #f39c12;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     object-fit: cover;
     background-color: #fff;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
 .header-text h1 {
@@ -48,14 +46,34 @@ header {
 }
 
 .header-text h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #f39c12;
     margin-top: 5px;
 }
 
-.header-text p {
-    font-size: 0.95rem;
-    opacity: 0.9;
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #fff;
+    color: #1e3c72;
+}
+
+.btn-signup {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.btn-signup:hover {
+    background-color: #d35400;
 }
 
 /* Container & Cards */
@@ -79,13 +97,11 @@ header {
     font-size: 1.4rem;
 }
 
-/* Registration Banner Card */
 .registration-card {
     border-left: 6px solid #27ae60;
     background: #eafaf1;
 }
 
-/* Verses Section Styling */
 .verses-card {
     border-left: 6px solid #8e44ad;
 }
@@ -114,7 +130,6 @@ header {
     margin-top: 5px;
 }
 
-/* Encouragement Section Styling */
 .encouragement-card {
     border-left: 6px solid #f39c12;
     background: #fffdf9;
@@ -141,18 +156,6 @@ header {
     margin-bottom: 10px;
 }
 
-.enc-item h3 {
-    font-size: 1.1rem;
-    color: #1e3c72;
-    margin-bottom: 5px;
-}
-
-.enc-item p {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* Google Classroom Box */
 .classroom-box {
     background: #ffffff;
     border: 2px dashed #f39c12;
@@ -170,11 +173,6 @@ header {
     color: #f39c12;
 }
 
-.classroom-details h3 {
-    font-size: 1.2rem;
-    color: #1e3c72;
-}
-
 .code-badge {
     display: inline-block;
     background: #1e3c72;
@@ -183,14 +181,7 @@ header {
     border-radius: 6px;
     font-weight: bold;
     font-size: 1.2rem;
-    letter-spacing: 1px;
     margin: 5px 0;
-}
-
-.app-download-text {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 8px;
 }
 
 .app-buttons {
@@ -208,7 +199,6 @@ header {
 .android { background-color: #0F9D58; color: white; }
 .ios { background-color: #000000; color: white; }
 
-/* Resources Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -226,19 +216,6 @@ header {
     justify-content: space-between;
 }
 
-.resource-card h3 {
-    color: #2c3e50;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.resource-card p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-/* Buttons */
 .btn {
     display: inline-block;
     padding: 10px 18px;
@@ -246,64 +223,81 @@ header {
     text-decoration: none;
     font-weight: 600;
     text-align: center;
+    cursor: pointer;
+    border: none;
     transition: all 0.3s ease;
 }
 
-.btn-register {
-    background-color: #27ae60;
-    color: white;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
+.btn-register { background-color: #27ae60; color: white; font-size: 1rem; margin-top: 10px; }
+.btn-link { background-color: #1e3c72; color: white; }
+.btn-church { background-color: #8e44ad; color: white; margin-top: 10px; }
 
-.btn-register:hover {
-    background-color: #219150;
-}
-
-.btn-link {
-    background-color: #1e3c72;
-    color: white;
-}
-
-.btn-link:hover {
-    background-color: #f39c12;
-}
-
-.btn-church {
-    background-color: #8e44ad;
-    color: white;
-    margin-top: 10px;
-}
-
-.btn-church:hover {
-    background-color: #732d91;
-}
-
-/* Contact Section */
-.contact-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.btn-contact {
-    color: white;
-}
-
+.contact-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+.btn-contact { color: white; }
 .call-btn { background-color: #2980b9; }
 .wa-btn { background-color: #25d366; }
 .email-btn { background-color: #e74c3c; }
 
-.btn-contact:hover {
-    opacity: 0.9;
+.text-center { text-align: center; }
+
+/* Modals (Popups) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
 }
 
-.text-center {
-    text-align: center;
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Footer */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close:hover { color: #000; }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #1e3c72;
+    color: white;
+    margin-top: 10px;
+}
+
 footer {
     text-align: center;
     padding: 20px;
